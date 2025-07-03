@@ -37,23 +37,13 @@ export default function Hero() {
       <h1 className="sr-only">{siteMetadata.title}</h1>
       {/* <ModelViewer /> */}
       <div className="flex h-1/2 items-center justify-center">
-                    <Image
-                    
-                src="/static/images/author/author.png"
-                alt="avatar"
-                width={192}
-                height={192}
-                className="rounded-full h-full w-full"
-              />
-              </div>
+        <Image src="/static/images/author/author.png" alt="avatar" width={192} height={192} className="rounded-full h-full w-full" />
+      </div>
       <div>
         <ul id="bios" className="hidden">
           <li>Hi it's Phillip!</li>
         </ul>
-        <span
-          ref={el}
-          className=" text-4xl font-extrabold tracking-tighter text-primary sm:text-6xl"
-        />
+        <span ref={el} className=" text-4xl font-extrabold tracking-tighter text-primary sm:text-6xl" />
       </div>
       <p className="mx-auto mt-3 max-w-lg text-gray-800 dark:text-gray-400 md:text-xl lg:text-lg xl:text-xl">
         Welcome to my over-engineered personal blog where I write about software engineering,

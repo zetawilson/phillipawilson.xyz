@@ -23,7 +23,6 @@ export default function Home({ posts }) {
         {/* <ModelViewer /> */}
         <Suspense fallback={<LuLoader2 className="mx-auto my-10 h-4 w-4 animate-spin" />}>
           <Hero />
-          
         </Suspense>
 
         <SectionContainer>
