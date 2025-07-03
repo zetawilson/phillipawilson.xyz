@@ -70,7 +70,7 @@ export function Header({ session, isCollapsed }: HeaderProps) {
               prefetch={false}
             >
               <SiteLogo kind="darklogo" logoType="image" size={8} />
-              <span className="sr-only">Andrew Sameh</span>
+              <span className="sr-only">Phillip Wilson</span>
             </Link>
 
             {dashboardNavLinks.map((navLink) => {

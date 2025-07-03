@@ -183,4 +183,4 @@ canonicalUrl: https://tailwind-nextjs-starter-blog.vercel.app/blog/introducing-t
 
 ## Licence
 
-[MIT](https://github.com/andrew-sameheh/andrewsam.xyz/blob/main/LICENSE) © [Andrew Sameh](https://www.andrewsam.xyz)
+[MIT](https://github.com/andrew-sameheh/andrewsam.xyz/blob/main/LICENSE) © [Phillip Wilson](https://www.andrewsam.xyz)

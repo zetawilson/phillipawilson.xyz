@@ -2,9 +2,9 @@
 
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Andrew Sameh',
-  author: 'Andrew Sameh',
-  headerTitle: 'Andrew Sameh',
+  title: 'Phillip Wilson',
+  author: 'Phillip Wilson',
+  headerTitle: 'Phillip Wilson',
   description: `An over-engineered personal blog where I write about software engineering, productivity, and other stupid stuff. Also, it's my portfolio.`,
   language: 'en-us',
   theme: 'system', // system, dark or light
