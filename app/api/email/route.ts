@@ -9,7 +9,7 @@ export async function POST() {
   try {
     const { data, error } = await resend.emails.send({
       from: 'Acme <onboarding@resend.dev>',
-      to: ['delivered@resend.dev'],
+        to: 'phillipawilson83@gmail.com',
       subject: 'Hello world',
       html: render(NotionMagicLinkEmail({ loginCode: 'John' })),
     })
