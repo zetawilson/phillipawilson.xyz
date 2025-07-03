@@ -15,7 +15,7 @@ const siteMetadata = {
   siteLogo: '/static/images/site/logo.png',
   socialBanner: '/static/images/twitter-card.png',
   // mastodon: 'https://mastodon.social/@mastodonuser',
-  email: 'g.andrewsameh@gmail.com',
+  email: 'phillipawilson83@gmail.com',
   github: 'https://github.com/andrew-sameh',
   x: 'https://twitter.com/AndrewSamh',
   twitter: 'https://twitter.com/AndrewSamh',
@@ -73,7 +73,7 @@ const siteMetadata = {
       metadata: '0',
       // theme example: light, dark, dark_dimmed, dark_high_contrast
       // transparent_dark, preferred_color_scheme, custom
-      theme: 'light',
+      theme: 'dark',
       // theme when dark mode
       darkTheme: 'transparent_dark',
       // If the theme option above is set to 'custom`

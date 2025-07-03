@@ -46,10 +46,10 @@ export default function Home({ posts }) {
             <RecentPosts posts={posts} />
           </Suspense>
         </SectionContainer>
-        <SectionContainer>
+        {/* <SectionContainer>
           <Separator />
           <TopTracks />
-        </SectionContainer>
+        </SectionContainer> */}
         <SectionContainer>
           <Separator />
           <MeteorsDemo />
