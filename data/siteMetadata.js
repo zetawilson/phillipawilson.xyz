@@ -16,7 +16,7 @@ const siteMetadata = {
   socialBanner: '/static/images/twitter-card.png',
   // mastodon: 'https://mastodon.social/@mastodonuser',
   email: 'phillipawilson83@gmail.com',
-  github: 'https://github.com/andrew-sameh',
+  github: 'https://github.com/zetawilson',
   x: 'https://twitter.com/AndrewSamh',
   twitter: 'https://twitter.com/AndrewSamh',
   // facebook: 'https://facebook.com',

@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="mb-0 flex flex-col justify-start space-x-0 space-y-3 py-10">
           <div className="flex flex-col items-center space-y-3 text-sm sm:flex-row sm:justify-between sm:text-base">
             {/* <Suspense fallback="loading..."> */}
-            <NowPlaying />
+            {/* <NowPlaying /> */}
             {/* </Suspense> */}
             <ul className="flex cursor-pointer items-center space-x-5">
               <li>
