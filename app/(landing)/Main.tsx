@@ -20,7 +20,7 @@ export default function Home({ posts }) {
   return (
     <>
       <div className="">
-        <ModelViewer />
+        {/* <ModelViewer /> */}
         <Suspense fallback={<LuLoader2 className="mx-auto my-10 h-4 w-4 animate-spin" />}>
           <Hero />
           
