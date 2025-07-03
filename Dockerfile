@@ -1,72 +1,22 @@
-FROM node:20-alpine AS base
+# Use an official Node.js runtime as the base image
+FROM node:20-alpine
 
-# Step 1. Rebuild the source code only when needed
-FROM base AS builder
-
+# Set the working directory in the container
 WORKDIR /app
 
-# Install dependencies based on the preferred package manager
-COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
-# Omit --production flag for TypeScript devDependencies
-RUN \
-    if [ -f yarn.lock ]; then yarn --frozen-lockfile && npx prisma generate; \
-    elif [ -f package-lock.json ]; then npm ci && npx prisma generate; \
-    elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm i && npx prisma generate; \
-    # Allow install without lockfile, so example works even without Node.js installed locally
-    else echo "Warning: Lockfile not found. It is recommended to commit lockfiles to version control." && yarn install && npx prisma generate; \
-    fi
-
+# Copy the package.json and package-lock.json files
 COPY . .
 
-RUN npx prisma generate
-# Environment variables must be present at build time
-# https://github.com/vercel/next.js/discussions/14030
-ARG ENV_VARIABLE
-ENV ENV_VARIABLE=${ENV_VARIABLE}
-ARG NEXT_PUBLIC_ENV_VARIABLE
-ENV NEXT_PUBLIC_ENV_VARIABLE=${NEXT_PUBLIC_ENV_VARIABLE}
+# Install any needed packages specified in package.json
+RUN yarn install
 
-# Next.js collects completely anonymous telemetry data about general usage. Learn more here: https://nextjs.org/telemetry
-# Uncomment the following line to disable telemetry at build time
-# ENV NEXT_TELEMETRY_DISABLED 1
+# Copy the remaining application code
 
-# Build Next.js based on the preferred package manager
-RUN \
-    if [ -f yarn.lock ]; then yarn build; \
-    elif [ -f package-lock.json ]; then npm run build; \
-    elif [ -f pnpm-lock.yaml ]; then pnpm build ; \
-    else npm run build; \
-    fi
 
-# Note: It is not necessary to add an intermediate step that does a full copy of `node_modules` here
+RUN yarn build 
 
-# Step 2. Production image, copy all the files and run next
-FROM base AS runner
+# Expose the port the app runs on
+EXPOSE 3000
 
-WORKDIR /app
-
-# Don't run production as root
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
-USER nextjs
-
-COPY --from=builder /app/public ./public
-
-# Automatically leverage output traces to reduce image size
-# https://nextjs.org/docs/advanced-features/output-file-tracing
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-COPY --from=builder --chown=nextjs:nodejs /app/prisma ./prisma
-
-# Environment variables must be redefined at run time
-ARG ENV_VARIABLE
-ENV ENV_VARIABLE=${ENV_VARIABLE}
-ARG NEXT_PUBLIC_ENV_VARIABLE
-ENV NEXT_PUBLIC_ENV_VARIABLE=${NEXT_PUBLIC_ENV_VARIABLE}
-
-# Uncomment the following line to disable telemetry at run time
-# ENV NEXT_TELEMETRY_DISABLED 1
-
-# Note: Don't expose ports here, Compose will handle that for us
-
-CMD ["npm", "run", "start:standalone"]
+# Define the command to run your app using `npm start`
+CMD ["yarn", "serve"]

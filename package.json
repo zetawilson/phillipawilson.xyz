@@ -5,7 +5,7 @@
   "scripts": {
     "start": "next dev",
     "dev": "prisma generate && cross-env INIT_CWD=$PWD next dev",
-    "build": "cross-env INIT_CWD=$PWD next build && cross-env NODE_OPTIONS='--experimental-json-modules' node ./scripts/postbuild.mjs",
+    "build": "next build && cross-env NODE_OPTIONS='--experimental-json-modules' node ./scripts/postbuild.mjs",
     "serve": "next start",
     "analyze": "cross-env ANALYZE=true next build",
     "lint": "next lint --fix --dir pages --dir app --dir components --dir lib --dir layouts --dir scripts",
@@ -89,7 +89,7 @@
     "react-fast-marquee": "^1.6.4",
     "react-github-calendar": "^4.1.5",
     "react-hook-form": "^7.51.5",
-    "react-icons": "^5.2.1",
+    "react-icons": "5.2.1",
     "react-markdown": "^9.0.1",
     "react-resizable-panels": "^2.0.19",
     "react-syntax-highlighter": "^15.5.0",
@@ -158,6 +158,5 @@
   },
   "prisma": {
     "seed": "node prisma/seed.js"
-  },
-  "packageManager": "yarn@3.6.1"
+  }
 }
