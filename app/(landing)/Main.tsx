@@ -15,12 +15,15 @@ import { Experience } from '@/components/landing/Experience'
 import { GithubCal } from '@/components/landing/GithubCal'
 import { Separator } from '@/components/ui/separator'
 import { MeteorsDemo } from '@/components/landing/GlitchyCards'
+import { ModelViewer } from '@/components/landing/model-viewer'
 export default function Home({ posts }) {
   return (
     <>
       <div className="">
+        <ModelViewer />
         <Suspense fallback={<LuLoader2 className="mx-auto my-10 h-4 w-4 animate-spin" />}>
           <Hero />
+          
         </Suspense>
 
         <SectionContainer>

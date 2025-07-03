@@ -75,9 +75,10 @@ export const Model: React.FC = () => {
 
 export const ModelViewer: React.FC = () => {
   return (
-    <div className="flex h-1/2 items-center justify-center">
+    <div className="flex h-full w-full items-center justify-center z-[-999] fixed">
       <Canvas
         camera={{ position: [3, 3, 3], fov: 30 }} // Adjust position for desired zoom level
+        className='opacity-50'
       >
         {/* <Canvas className='h-[46rem] w-96'> */}
         <ambientLight intensity={1} />

@@ -4,7 +4,7 @@ import Typed from 'typed.js'
 import IconsBundle from '@/components/social-icons'
 import { ModelViewer } from '@/components/landing/model-viewer'
 import siteMetadata from '@/data/siteMetadata'
-
+import Image from '@/components/Image'
 function createTypedInstance(el: HTMLElement) {
   return new Typed(el, {
     stringsElement: '#bios',
@@ -35,7 +35,17 @@ export default function Hero() {
   return (
     <div className="container mx-auto -mt-16 flex h-screen flex-col content-center justify-center px-4 py-5 text-center">
       <h1 className="sr-only">{siteMetadata.title}</h1>
-      <ModelViewer />
+      {/* <ModelViewer /> */}
+      <div className="flex h-1/2 items-center justify-center">
+                    <Image
+                    
+                src="/static/images/author/author.png"
+                alt="avatar"
+                width={192}
+                height={192}
+                className="rounded-full h-full w-full"
+              />
+              </div>
       <div>
         <ul id="bios" className="hidden">
           <li>Hi it's Phillip!</li>
