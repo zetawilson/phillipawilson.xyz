@@ -51,4 +51,4 @@ yarn-error.log*
 /public/static/code_examples
 
 # env files
-.env
+# .env
